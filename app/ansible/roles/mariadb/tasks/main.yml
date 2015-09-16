@@ -1,0 +1,25 @@
+---
+
+- name: Install python-mysqldb
+  apt: pkg={{ item }} state=present
+  with_items:
+    - python-mysqldb
+
+- name: Add MariaDB apt key
+  apt_key: url=http://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search=0xcbcb082a1bb943db
+
+- name: Add MariaDB apt repository
+  apt_repository: "repo='deb {{mariadb_repo_url}} wheezy main' state=present update_cache=yes"
+
+- name: Install MariaDB 10 server
+  apt: pkg=mariadb-server state=present
+
+- name: create database user
+  mysql_user: name={{ mysql_db_user }} password={{ mysql_db_password }} priv=*.*:ALL host={{ item }}
+  with_items:
+    - 127.0.0.1
+    - ::1
+    - localhost
+
+- name: mariadb service state
+  service: name=mysql state=started enabled=yes

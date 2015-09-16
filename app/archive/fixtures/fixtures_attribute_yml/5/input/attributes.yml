@@ -1,0 +1,52 @@
+attributes:
+    sku:
+        labels:
+            en_US: SKU
+            fr_FR: SKU
+        type:       pim_catalog_identifier
+        group:               other
+        unique:              true
+        useableAsGridFilter: true
+        sortOrder:           1
+    brand:
+        labels:
+            en_US: brand
+            fr_FR: brand
+        type: pim_catalog_text
+        group:               other
+        sortOrder:           2
+    product_line:
+        labels:
+            en_US: product_line
+            fr_FR: product_line
+        type: pim_catalog_text
+        group:               other
+        sortOrder:           3
+    name:
+        labels:
+            en_US: name
+            fr_FR: name
+        type: pim_catalog_text
+        group:               other
+        sortOrder:           4
+    brand_name:
+        labels:
+            en_US: brand_name
+            fr_FR: brand_name
+        type: pim_catalog_text
+        group:               other
+        sortOrder:           5
+    package_type:
+        labels:
+            en_US: package_type
+            fr_FR: package_type
+        type: pim_catalog_number
+        group:               other
+        sortOrder:           6
+    package_unit:
+        labels:
+            en_US: package_unit
+            fr_FR: package_unit
+        type: pim_catalog_number
+        group:               other
+        sortOrder:           7

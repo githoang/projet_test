@@ -1,0 +1,5 @@
+[2015-09-16 11:19:20] batch.DEBUG: Job execution starting: startTime=, endTime=, updatedTime=, status=2, exitStatus=, exitDescription=[], job=[import_test4] [] []
+[2015-09-16 11:19:20] batch.INFO: Step execution starting: id=0, name=[foody_import_product.jobs.specific_product_import.import.title], status=[2], exitCode=[EXECUTING], exitDescription=[], readCount=0, writeCount=0, filterCount=0 [] []
+[2015-09-16 11:19:23] batch.DEBUG: Step execution success: id= 17 [] []
+[2015-09-16 11:19:23] batch.DEBUG: Step execution complete: id=17, name=[foody_import_product.jobs.specific_product_import.import.title], status=[1], exitCode=[EXECUTING], exitDescription=[], readCount=0, writeCount=0, filterCount=0 [] []
+[2015-09-16 11:19:23] batch.DEBUG: Upgrading JobExecution status: startTime=2015-09-16T09:19:20+00:00, endTime=, updatedTime=, status=3, exitStatus=, exitDescription=[], job=[import_test4] [] []

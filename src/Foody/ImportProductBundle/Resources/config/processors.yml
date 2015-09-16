@@ -1,0 +1,7 @@
+parameters:
+    foody_import.processor.product.class: Foody\ImportProductBundle\Processor\ProductProcessor
+
+services:
+    foody_import_product.processor.product:
+        class: '%foody_import.processor.product.class%'
+        arguments: [@pim_catalog.manager.product, @pim_catalog.updater.product]

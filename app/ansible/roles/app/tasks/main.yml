@@ -1,0 +1,7 @@
+# Put here your app provisionning logic
+
+- name: Assures {{ log_dir }} dir exists
+  file: path={{ log_dir }}/akeneo state=directory mode=0777
+
+- name: Assures cache dir exists
+  file: path=/tmp/akeneo state=directory mode=0777

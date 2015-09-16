@@ -1,0 +1,22 @@
+channels:
+    ecommerce:
+        code:  ecommerce
+        label: Ecommerce
+        tree:  master
+        locales:
+            - fr_FR
+            - de_DE
+            - en_US
+        currencies:
+            - USD
+            - EUR
+        color: blue
+    salepoint:
+        code:  salepoint
+        label: Salepoint
+        tree:  master
+        locales:
+            - fr_FR
+        currencies:
+            - EUR
+        color: cyan

@@ -1,0 +1,62 @@
+---
+# This playbook contains plays that will install and configure php5-fpm.
+
+- name: install php5-fpm and php5-cli
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - php5-fpm
+    - php5-cli
+
+- name: install php5-* extensions
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - php5-common
+    - php5-mysql
+    - php-pear
+    - php5-mcrypt
+    - php5-curl
+    - php5-gd
+    - php5-intl
+    - php5-memcached
+    - php5-xdebug
+    - php-apc
+
+- lineinfile: dest=/etc/php5/cli/conf.d/20-xdebug.ini line="xdebug.max_nesting_level = 200"
+- name: change max_nesting_level in php-fpm conf
+  lineinfile: dest=/etc/php5/fpm/conf.d/20-xdebug.ini line="xdebug.max_nesting_level = 200"
+  notify:
+    - restart php5-fpm
+
+- lineinfile: dest=/etc/php5/cli/php.ini insertafter=";date.timezone =" line="date.timezone = Europe/Paris"
+- name: change error_log in php-fpm conf
+  lineinfile: dest=/etc/php5/fpm/php.ini insertafter=";date.timezone =" line="date.timezone = Europe/Paris"
+  notify:
+    - restart php5-fpm
+
+- lineinfile: dest=/etc/php5/cli/php.ini insertafter="^;error_log" line={{ log_dir }}/php_errors.log
+- name: change error_log in php-fpm conf
+  lineinfile: dest=/etc/php5/fpm/php.ini insertafter="^;error_log" line={{ log_dir }}/php_errors.log
+  notify:
+    - restart php5-fpm
+
+# - name: setup default site
+#   template: src=www.conf dest=/etc/php5/fpm/pool.d/www.conf owner=root group=root mode=0644
+
+# - name: copy over php.ini settings file (on vagrant box)
+#   copy: src=php.development.ini dest=/etc/php5/fpm/php.ini
+#   notify: restart php5-fpm
+#   when: is_vagrant is defined
+
+# - name: copy over php.ini settings file (on production box)
+#   copy: src=php.production.ini dest=/etc/php5/fpm/php.ini
+#   notify: restart php5-fpm
+#   when: is_vagrant is not defined
+
+# - name: configure php5-fpm extensions (copy custom configuration)
+#   copy: src={{ item }} dest=/etc/php5/fpm/conf.d/{{ item }} owner=root group=root mode=0644
+#   with_items:
+#     - apc.ini
+#     - memcache.ini
+#     - xdebug.ini
+#     - suhosin.ini
+#   notify: restart php5-fpm

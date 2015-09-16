@@ -1,0 +1,36 @@
+---
+
+user: "vagrant"
+
+host_name: "pim.foody.dev"
+log_dir: "/home/vagrant/logs"
+framework:  "symfony2"
+doc_root: "/home/vagrant/www/project/web"
+
+
+# Nginx
+nginx_port_dashboard: "1000"
+
+
+nginx_port_pimpmylog: "1090"
+nginx_port_memcadmin: "1091"
+
+# Memcached
+memcached_memory: "128" # Memory size in MB
+
+
+
+mariadb_version: 10.1
+mariadb_repo_url: http://nwps.ws/pub/mariadb/repo/{{ mariadb_version }}/debian
+
+mysql_db_user: vagrant
+mysql_db_password: vagrant
+
+
+system_packages:
+  - curl
+  - git
+  - vim
+  - htop
+  - ncdu
+  - wget

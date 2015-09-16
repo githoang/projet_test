@@ -1,0 +1,7 @@
+parameters:
+#    foody_installer.example.class: Foody\InstallerBundle\Example
+
+services:
+#    foody_installer.example:
+#        class: %foody_installer.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

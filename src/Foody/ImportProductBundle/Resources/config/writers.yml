@@ -1,0 +1,8 @@
+parameters:
+    foody_import.writer.orm_product.class: Foody\ImportProductBundle\Writer\ORM\ProductWriter
+
+services:
+    foody_import_product.writer.orm_product:
+        class: '%foody_import.writer.orm_product.class%'
+        arguments:
+            - '@pim_catalog.manager.product'

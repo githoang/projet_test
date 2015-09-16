@@ -1,0 +1,9 @@
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     localhost
+    database_port:     ~
+    database_name:     pim_foody
+    database_user:     root
+    database_password: null
+    locale:            en
+    secret:            ThisTokenIsNotSoSecretChangeIt

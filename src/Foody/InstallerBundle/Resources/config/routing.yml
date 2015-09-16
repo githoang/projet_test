@@ -1,0 +1,3 @@
+foody_installer_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: FoodyInstallerBundle:Default:index }

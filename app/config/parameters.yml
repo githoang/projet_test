@@ -1,0 +1,11 @@
+parameters:
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port: null
+    database_name: pim_foody
+    database_user: root
+    database_password: hoang
+    locale: en
+    secret: ThisTokenIsNotSoSecretChangeIt
+    installed: '2015-09-15T11:41:37+02:00'
+    installer_data: 'FoodyInstallerBundle:main'

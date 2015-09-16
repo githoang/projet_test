@@ -1,0 +1,13 @@
+connector:
+    name: Product CSV Connector
+    jobs:
+        specific_product_import:
+            title: 'Job Import Product'
+            type:  import
+            steps:
+                import:
+                    title: foody_import_product.jobs.specific_product_import.import.title
+                    services:
+                        reader:    foody_import_product.reader.bdd_product
+                        processor: foody_import_product.processor.product
+                        writer:    foody_import_product.writer.orm_product

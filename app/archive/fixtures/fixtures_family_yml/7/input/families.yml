@@ -1,0 +1,15 @@
+families:
+    segment:
+        labels:
+            en_US: 'Segment'
+            fr_FR: 'Segment'
+            de_DE: 'Segment'
+        attributeAsLabel: name
+        attributes:
+            - sku
+            - brand
+            - product_line
+            - name
+            - brand_name
+            - package_type
+            - package_unit

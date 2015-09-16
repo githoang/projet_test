@@ -1,0 +1,6 @@
+parameters:
+    foody_import.reader.bdd_product.class: Foody\ImportProductBundle\Reader\ProductReader
+
+services:
+    foody_import_product.reader.bdd_product:
+        class: '%foody_import.reader.bdd_product.class%'

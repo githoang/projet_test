@@ -1,0 +1,7 @@
+parameters:
+#    foody_import_product.example.class: Foody\ImportProductBundle\Example
+
+services:
+#    foody_import_product.example:
+#        class: %foody_import_product.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

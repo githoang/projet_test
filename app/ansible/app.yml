@@ -1,0 +1,23 @@
+# http://docs.ansible.com/playbooks.html
+
+---
+
+- name: apply common configuration to all nodes
+  hosts: all
+  vars_files:
+    - settings.yml
+  remote_user: "{{ uservar }}"
+  sudo: true
+  sudo_user: root
+  roles:
+    - init
+    - php5
+    - nginx
+    - dashboard
+    - mariadb
+    - memcached
+    - pimpmylog
+    - mailcatcher
+    - composer
+    - memcadmin
+    - app
